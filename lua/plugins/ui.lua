@@ -1,22 +1,24 @@
+-- lua/plugins/ui.lua
 return {
-  -- Icons (requires Nerd Font)
   { "nvim-tree/nvim-web-devicons", lazy = true },
 
-  -- Theme
   {
     "catppuccin/nvim",
     name = "catppuccin",
     priority = 1000,
     config = function()
+      vim.opt.termguicolors = true
+
       require("catppuccin").setup({
         flavour = "mocha",
         integrations = {
           telescope = true,
           treesitter = true,
         },
+	term_colors = true,
       })
+
       vim.cmd.colorscheme("catppuccin")
     end,
   },
 }
-
