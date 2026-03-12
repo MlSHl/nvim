@@ -36,3 +36,9 @@ if vim.fn.has("wsl") == 1 and vim.fn.executable("win32yank.exe") == 1 then
 end
 
 vim.opt.clipboard = "unnamedplus"
+-- Set default tab and indentation size to 4 spaces
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.softtabstop = 4
+vim.opt.expandtab = true
+vim.opt.autoindent = true -- Enable automatic indentation on new lines
