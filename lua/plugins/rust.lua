@@ -1,9 +1,8 @@
 return {
   "mrcjkb/rustaceanvim",
-  version = "^5",
+  version = "^6",
   ft = { "rust" },
   config = function()
-    -- Capabilities for completion
     local capabilities = vim.lsp.protocol.make_client_capabilities()
     local ok, cmp_lsp = pcall(require, "cmp_nvim_lsp")
     if ok then
@@ -21,15 +20,12 @@ return {
           ["rust-analyzer"] = {
             cargo = { allFeatures = true },
             check = { command = "clippy" },
-            -- IMPORTANT: don't set both checkOnSave=true AND check.command if you aren't sure.
-            -- We'll keep only the modern form:
             checkOnSave = false,
           },
         },
       },
     }
 
-    -- Format on save for Rust buffers
     vim.api.nvim_create_autocmd("BufWritePre", {
       pattern = "*.rs",
       callback = function()
@@ -38,4 +34,3 @@ return {
     })
   end,
 }
-

@@ -23,23 +23,12 @@ return {
           enable = true,
         },
       })
-
-      vim.api.nvim_create_autocmd("FileType", {
-        pattern = {
-          "svelte",
-          "html",
-          "css",
-          "javascript",
-          "typescript",
-          "c",
-          "cpp",
-          "rust",
-          "python",
-        },
-        callback = function(args)
-          vim.treesitter.start(args.buf)
-        end,
-      })
     end,
+  },
+
+  {
+    "folke/todo-comments.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    opts = {},
   },
 }
