@@ -13,7 +13,7 @@ return {
           autocomplete = false,
         },
         mapping = cmp.mapping.preset.insert({
-            ["<C-x><C-o>"] = cmp.mapping.complete(),
+            ["<C-space>"] = cmp.mapping.complete(),
             ["<C-e>"] = cmp.mapping.abort(),
             ["<CR>"] = cmp.mapping.confirm({ select = true }),
             ["<Tab>"] = cmp.mapping.select_next_item(),
