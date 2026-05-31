@@ -57,7 +57,7 @@ return {
 
       -- FAST when repo is git-tracked
       vim.keymap.set("n", "<leader>fF", function()
-        builtin.git_files({
+        builtin.find_files({
                 cwd = repo_root(),
                 hidden = true,
                 no_ignore=true
