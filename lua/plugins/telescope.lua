@@ -57,7 +57,11 @@ return {
 
       -- FAST when repo is git-tracked
       vim.keymap.set("n", "<leader>fF", function()
-        builtin.git_files({ cwd = repo_root() })
+        builtin.git_files({
+                cwd = repo_root(),
+                hidden = true,
+                no_ignore=true
+            })
       end, { desc = "Git files (repo root)" })
 
       -- SCOPED navigation: “just this package / folder”
